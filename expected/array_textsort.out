@@ -1,0 +1,27 @@
+CREATE EXTENSION array_textsort;
+SELECT ftest('{"a","b","ä",2,1,"@"}');
+ ftest 
+-------
+ t
+(1 row)
+
+SELECT ftest('{"b","B","A","C","ä","Ä","a","b"}');
+ ftest 
+-------
+ t
+(1 row)
+
+SELECT ftest('{"arbeit","Arbeit","aRbeit","atom"}');
+ ftest 
+-------
+ t
+(1 row)
+
+SELECT ftest('{"aBc","AbC","Abc","aBC","abc","ABc","abC","ABC"}');
+ ftest 
+-------
+ t
+(1 row)
+
+SELECT array_textsort('{"abc",NULL,"xyz"}');
+ERROR:  array must not contain nulls

@@ -1,0 +1,8 @@
+SELECT array_distinct('{"four","six","five","four","eleven"}');
+     array_distinct     
+------------------------
+ {eleven,five,four,six}
+(1 row)
+
+SELECT array_distinct('{"four","six",NULL,"four","eleven"}');
+ERROR:  array must not contain nulls

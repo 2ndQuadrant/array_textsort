@@ -1,0 +1,5 @@
+comment = 'sort function for 1D arrays of text'
+default_version = '1.1'
+module_pathname = '$libdir/array_textsort'
+relocatable = true
+
